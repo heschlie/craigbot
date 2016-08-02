@@ -33,8 +33,8 @@ class FindPartsPipeline(object):
 
         if not any([year in item['title'] for year in self.years]):
             raise DropItem('Not correct year')
-        # if not any([part in item['title'] for part in self.parts]):
-            # raise DropItem('Not correct part')
+        if not any([part in item['title'] for part in self.parts]):
+            raise DropItem('Not correct part')
 
         return item
 
